@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity">
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="right|center"
+            android:text="무료 처방전이 도착했습니다!"
+            android:textColor="#000000"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:layout_width="234dp"
+            android:layout_height="34dp"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="left|center"
+            android:text="지금 확인하기"
+            android:textColor="@color/colorAccent"
+            android:textSize="12sp" />
+    </TableRow>
+
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="96dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:autoText="false"
+        android:text="검사결과 "
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/tableRow"
+        app:layout_constraintStart_toStartOf="@+id/tableRow"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="20dp"
+        android:text="안녕하세요 루비님, 검사 결과가 나왔습니다."
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="10dp"
+        android:text="10개 항목이 정상 범위 밖에 있습니다"
+        android:textColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="373dp"
+        android:layout_height="361dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20">
+
+        <TableRow>
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@android:color/holo_orange_light"
+                android:gravity="center"
+                android:text="항목"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <TextView
+                android:layout_width="184dp"
+                android:layout_height="match_parent"
+                android:background="#9C27B0"
+                android:gravity="center"
+                android:text="결과"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+        </TableRow>
+
+
+        <TableRow android:layout_height="172dp">
+
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="포도당"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="7" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="38dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="빌리루빈"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="7" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="케톤"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="4" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="잠혈"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="1" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="PH"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="2" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="단백질"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar6"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="5" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="아질산염"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar7"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="1" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="우루빌리노겐"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar8"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="7" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="비중"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar9"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="2" />
+        </TableRow>
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="183dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/background_light"
+                android:gravity="center"
+                android:text="백혈구"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar10"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#D6D7D6"
+                android:max="10"
+                android:progress="5" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="67dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="@+id/textView20"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
+        app:layout_constraintTop_toBottomOf="@+id/message"
+        tools:srcCompat="@tools:sample/avatars[2]" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tableRow"
+        app:srcCompat="@android:drawable/star_big_on" />
+
+
+</android.support.constraint.ConstraintLayout>
